@@ -16,7 +16,7 @@ for example bash script:
 #!/bin/bash
 
 # pass list of videos to dmenu
-chosen_video=$(pipedcli.py --domain 'https://piped.kavin.rocks' --token '<token>' -S | dmenu -i -l 30 | cut -d '|' -f4)
+chosen_video=$(pipedcli.py --domain 'piped.kavin.rocks' --token '<token>' -S | dmenu -i -l 30 | cut -d '|' -f4)
 [ -z "${chosen_video}" ] && exit
 
 
@@ -31,5 +31,5 @@ fi
 mpv --pause --save-position-on-quit --demuxer-max-bytes=123K --ytdl-format="${chosen_format}" ${chosen_video}
 ```
 to get your token you need to log in into piped and then
-in firefox: open Developer Tools -> Inspect -> Storage -> Local Storage -> piped -> authToken
-in vivaldi: open Developer Tools -> Inspect -> Application -> Local Storage -> piped -> authToken
+- in firefox: open Developer Tools -> Inspect -> Storage -> Local Storage -> piped -> authToken
+- in vivaldi: open Developer Tools -> Inspect -> Application -> Local Storage -> piped -> authToken
